@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Água - EcoConsciênciaaaaaa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>EcoConsciência</h1>
+        <p>Consumo Excessivo de Água</p>
+    </header>
+
+    <main>
+
+        <a href="./index.html" style="display: inline-block; margin-bottom: 1.5rem; color: #2c5e43; font-weight: bold; text-decoration: none;">&larr; Voltar para o Início</a>
+
+        <section id="introducao">
+            <h2>O Impacto do Desperdício Diário</h2>
+            <p>Pequenas ações cotidianas, como banhos excessivamente longos, torneiras abertas ao escovar os dentes ou lavar o carro com mangueira, geram um impacto gigantesco nas reservas de água potável do planeta. Mudar esses hábitos é urgente.</p>
+        </section>
+
+
+        <section id="calculadora" style="background-color: #ffffff; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid #00bcd4;">
+            <h2>Calculadora de Desperdício no Banho</h2>
+            <p style="margin-bottom: 1.5rem;">Um banho de ducha comum consome cerca de <strong>9 litros</strong> de água por minuto. Insira o tempo médio do seu banho abaixo para calcular o seu consumo:</p>
+            
+            <div style="margin-bottom: 1rem;">
+                <label for="minutos" style="font-weight: bold; display: block; margin-bottom: 0.5rem;">Quantos minutos dura o seu banho?</label>
+                <input type="number" id="minutos" placeholder="Ex: 15" style="padding: 0.6rem; width: 100%; max-width: 200px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+            </div>
+
+            <button onclick="calcularAgua()" class="btn" style="background-color: #00bcd4; cursor: pointer; border: none; color: white; padding: 0.7rem 1rem; border-radius: 4px; font-weight: bold;">Calcular Consumo</button>
+
+            <div id="resultado" style="margin-top: 1.5rem; padding: 1rem; border-radius: 4px; display: none;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto de Desenvolvimento I - Ciência da Computação UNIP</p>
+    </footer>
+
+    <script>
+        function calcularAgua() {
+            const minutos = document.getElementById('minutos').value;
+            const resultadoDiv = document.getElementById('resultado');
+
+            if (minutos <= 0 || minutos === "") {
+                resultadoDiv.style.display = "block";
+                resultadoDiv.style.backgroundColor = "#ffebee";
+                resultadoDiv.style.color = "#c62828";
+                resultadoDiv.innerHTML = "Por favor, insira um tempo válido em minutos.";
+                return;
+            }
+
+            const totalLitros = minutos * 9;
+            
+            resultadoDiv.style.display = "block";
+            resultadoDiv.style.backgroundColor = "#e0f7fa";
+            resultadoDiv.style.color = "#006064";
+
+            let mensagemSustentavel = "";
+            if (minutos > 5) {
+                mensagemSustentavel = "<br><br><strong>Dica de Sustentabilidade:</strong> O ideal estipulado pela OMS é um banho de até 5 minutes (gastando cerca de 45 litros). Tente reduzir seu tempo para ajudar o planeta!";
+            } else {
+                mensagemSustentavel = "<br><br><strong>Parabéns!</strong> Você está dentro do tempo recomendado para um consumo sustentável!";
+            }
+
+            resultadoDiv.innerHTML = "Seu banho consome aproximadamente <strong>" + totalLitros + " litros</strong> de água limpa." + mensagemSustentavel;
+        }
+    </script>
+
+</body>
+</html>

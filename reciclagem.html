@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclagem Incorreta - EcoConsciência</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        .btn-coleta {
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn-coleta:hover { opacity: 0.9; }
+        .azul { background-color: #2196F3; }
+        .vermelho { background-color: #F44336; }
+        .verde { background-color: #4CAF50; }
+        .marrom { background-color: #795548; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EcoConsciência</h1>
+        <p>Reciclagem Incorreta e Coleta Seletivaa</p>
+    </header>
+
+    <main>
+        <a href="./index.html" style="display: inline-block; margin-bottom: 1.5rem; color: #2c5e43; font-weight: bold; text-decoration: none;">&larr; Voltar para o Início</a>
+        
+        <section id="introducao">
+            <h2>Como Separar o Lixo Corretamente?</h2>
+            <p>Misturar materiais recicláveis com resíduos orgânicos inviabiliza o processo de reciclagem nos centers de triagem. A separação correta na nossa casa é fundamental para a economia circular.</p>
+        </section>
+
+        <section id="quiz-reciclagem" style="border-left: 5px solid #ff9800;">
+            <h2>Desafio da Coleta Seletiva (Gamificação)</h2>
+            <p style="margin-bottom: 1.5rem;">Descubra se você sabe reciclar! Para onde vai o objeto abaixo? Clique na lixeira correta:</p>
+            
+            <div style="background: #eef2f0; padding: 2rem; border-radius: 8px; text-align: center; margin-bottom: 1rem;">
+                <span style="font-size: 0.9rem; color: #666; text-transform: uppercase; font-weight: bold;">Objeto Atual:</span>
+                <h1 id="nome-objeto" style="color: #333; margin: 0.5rem 0 1.5rem 0; font-size: 2.5rem;">Garrafa PET</h1>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                    <button onclick="jogar('vermelho')" class="btn-coleta vermelho">Plástico (Vermelho)</button>
+                    <button onclick="jogar('azul')" class="btn-coleta azul">Papel (Azul)</button>
+                    <button onclick="jogar('verde')" class="btn-coleta verde">Vidro (Verde)</button>
+                    <button onclick="jogar('marrom')" class="btn-coleta marrom">Orgânico (Marrom)</button>
+                </div>
+            </div>
+
+            <div id="feedback-quiz" style="padding: 1rem; border-radius: 4px; text-align: center; font-weight: bold; display: none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto de Desenvolvimento I - Ciência da Computação UNIP</p>
+    </footer>
+
+    <script>
+        const perguntas = [
+            { objeto: "Garrafa PET", respostaCorreta: "vermelho" },
+            { objeto: "Caixa de Papelão", respostaCorreta: "azul" },
+            { objeto: "Pote de Maionese (Vidro)", respostaCorreta: "verde" },
+            { objeto: "Casca de Banana", respostaCorreta: "marrom" },
+            { objeto: "Sacola Plástica", respostaCorreta: "vermelho" },
+            { objeto: "Jornal Velho", respostaCorreta: "azul" },
+            { objeto: "Restos de Comida", respostaCorreta: "marrom" },
+            { objeto: "Frasco de Shampoo (Plástico)", respostaCorreta: "vermelho" },
+            { objeto: "Embalagem de Leite (Papel)", respostaCorreta: "azul" },
+            { objeto: "Garrafa de Cerveja (Vidro)", respostaCorreta: "verde" }
+        ];
+
+        let indiceAtual = 0;
+
+        function jogar(corEscolhida) {
+            const feedback = document.getElementById("feedback-quiz");
+            const perguntaAtual = perguntas[indiceAtual];
+
+            feedback.style.display = "block";
+
+            if (corEscolhida === perguntaAtual.respostaCorreta) {
+                feedback.style.backgroundColor = "#e8f5e9";
+                feedback.style.color = "#2e7d32";
+                feedback.innerHTML = "🎉 Acertou! O objeto '" + perguntaAtual.objeto + "' vai exatamente para essa lixeira.";
+                
+                indiceAtual++;
+                if (indiceAtual >= perguntas.length) {
+                    indiceAtual = 0; 
+                }
+                
+                setTimeout(() => {
+                    document.getElementById("nome-objeto").innerHTML = perguntas[indiceAtual].objeto;
+                    feedback.style.display = "none";
+                }, 2000);
+
+            } else {
+                feedback.style.backgroundColor = "#ffebee";
+                feedback.style.color = "#c62828";
+                feedback.innerHTML = "❌ Errado! Tente novamente. O objeto '" + perguntaAtual.objeto + "' pertence a outra categoria.";
+            }
+        }
+    </script>
+</body>
+</html>
