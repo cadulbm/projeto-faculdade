@@ -8,23 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <style>
-        .btn-coleta {
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .btn-coleta:hover { opacity: 0.9; }
-        .azul { background-color: #2196F3; }
-        .vermelho { background-color: #F44336; }
-        .verde { background-color: #4CAF50; }
-        .marrom { background-color: #795548; }
-    </style>
 </head>
 <body>
 
@@ -34,7 +17,70 @@
     </header>
 
     <main>
-        <a href="./Projeto faculdade.html" style="display: inline-block; margin-bottom: 1.5rem; color: #2c5e43; font-weight: bold; text-decoration: none;">&larr; Voltar para o Início</a>
+        <a href="index.html" style="display: inline-block; margin-bottom: 1.5rem; color: #2c5e43; font-weight: bold; text-decoration: none;">&larr; Voltar para o Início</a>
+
+        <section id="maleficios" style="margin-top: 1rem;">
+            <h2>O Impacto Real do Descarte Incorreto</h2>
+            <p>De acordo com dados veiculados pelo <strong>Instituto Trata Brasil</strong>, a destinação inadequada de resíduos sólidos urbanos gera consequências graves que afetam diretamente a saúde pública, a economia das cidades e o equilíbrio ecológico.</p>
+
+            <div class="cards-container">
+                
+                <article class="card" style="border-top: 4px solid #ff4d4d;">
+                    <h3>Proliferação de Doenças</h3>
+                    <p>O acúmulo de lixo a céu aberto atrai vetores como ratos, baratas e mosquitos. Isso potencializa a transmissão de doenças graves como a Dengue, Zika, Chikungunya, Leptospirose e infecções gastrointestinais.</p>
+                </article>
+
+                <article class="card" style="border-top: 4px solid #ff4d4d;">
+                    <h3>Chorume e Contaminação</h3>
+                    <p>A decomposição do lixo rejeitado incorretamente gera o chorume — um líquido escuro e altamente tóxico. Ele infiltra no solo, contaminando os lençóis freáticos e poluindo fontes de água potável.</p>
+                </article>
+
+                <article class="card" style="border-top: 4px solid #ff4d4d;">
+                    <h3>Prejuízo aos Cofres Públicos</h3>
+                    <p>Cidades gastam milhões de reais anualmente para desentupir bueiros, limpar canais e remediar alagamentos causados pelo entupimento de redes de drenagem por lixo jogado nas ruas.</p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <section id="tempo-decomposicao" style="margin: 3rem 0; background: #222; padding: 1.5rem; border-radius: 8px;">
+            <h3 style="color: #fff; margin-bottom: 1rem; text-align: center;">Quanto tempo o lixo fica na natureza?</h3>
+            
+            <table style="width: 100%; border-collapse: collapse; color: #fff; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #444; color: #4caf50;">
+                        <th style="padding: 10px;">Material</th>
+                        <th style="padding: 10px;">Tempo de Decomposição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 10px;">Papel e Papelão</td>
+                        <td style="padding: 10px;">3 a 6 meses</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 10px;">Latas de Alumínio</td>
+                        <td style="padding: 10px;">Mais de 200 anos</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 10px;">Plásticos (Garrafas, Sacolas)</td>
+                        <td style="padding: 10px;">Mais de 400 anos</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;">Vidro</td>
+                        <td style="padding: 10px;">Tempo indeterminado (milhares de anos)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+               <p style="font-size: 0.8rem; color: #aaa; margin-top: 1.5rem; text-align: center;">
+                <strong>Créditos dos Dados:</strong> 
+                <a href="https://pt.wikipedia.org/wiki/Reciclagem" target="_blank" style="color: #4caf50; text-decoration: underline; font-weight: bold;">
+                    Wikipédia (Panorama da Reciclagem no Brasil)
+                </a>
+            </p>
+        </section>
 
         <section id="introducao">
             <h2>Como Separar o Lixo Corretamente?</h2>
@@ -73,9 +119,9 @@
             { objeto: "Casca de Banana", respostaCorreta: "marrom" },
             { objeto: "Sacola Plástica", respostaCorreta: "vermelho" },
             { objeto: "Jornal Velho", respostaCorreta: "azul" },
-            { objeto: "Restos de Comida", respostaCorreta: "marrom" }, // <- Vírgula adicionada
-            { objeto: "Frasco de Shampoo (Plástico)", respostaCorreta: "vermelho" }, // <- Vírgula adicionada
-            { objeto: "Embalagem de Leite (Papel)", respostaCorreta: "azul" }, // <- Vírgula adicionada
+            { objeto: "Restos de Comida", respostaCorreta: "marrom" }, 
+            { objeto: "Frasco de Shampoo (Plástico)", respostaCorreta: "vermelho" }, 
+            { objeto: "Embalagem de Leite (Papel)", respostaCorreta: "azul" }, 
             { objeto: "Garrafa de Cerveja (Vidro)", respostaCorreta: "verde" }
         ];
 
@@ -83,30 +129,33 @@
 
         function jogar(corEscolhida) {
             const feedback = document.getElementById("feedback-quiz");
-            const preguntaAtual = perguntas[indiceAtual];
+            const perguntaAtual = perguntas[indiceAtual];
 
             feedback.style.display = "block";
 
-            if (corEscolhida === preguntaAtual.respostaCorreta) {
-                // CORRIGIDO: Cores alteradas para melhor contraste e leitura (Fundo verde claro, texto verde escuro)
+            if (corEscolhida === perguntaAtual.respostaCorreta) {
                 feedback.style.backgroundColor = "#e8f5e9";
                 feedback.style.color = "#2e7d32";
-                feedback.innerHTML = "🎉 Acertou! O objeto '" + preguntaAtual.objeto + "' vai exatamente para essa lixeira.";
+                feedback.innerHTML = "🎉 Acertou! O objeto '" + perguntaAtual.objeto + "' vai exatamente para essa lixeira.";
                 
                 indiceAtual++;
                 if (indiceAtual >= perguntas.length) {
                     indiceAtual = 0; 
                 }
                 
+                const botoes = document.querySelectorAll('.btn-coleta');
+                botoes.forEach(btn => btn.style.pointerEvents = 'none');
+
                 setTimeout(() => {
                     document.getElementById("nome-objeto").innerHTML = perguntas[indiceAtual].objeto;
                     feedback.style.display = "none";
-                }, 2000);
+                    botoes.forEach(btn => btn.style.pointerEvents = 'auto');
+                }, 1500);
 
             } else {
                 feedback.style.backgroundColor = "#ffebee";
                 feedback.style.color = "#c62828";
-                feedback.innerHTML = "❌ Errado! Tente novamente. O objeto '" + preguntaAtual.objeto + "' pertence a outra categoria.";
+                feedback.innerHTML = "❌ Errado! Tente novamente. O objeto '" + perguntaAtual.objeto + "' pertence a outra categoria.";
             }
         }
     </script>

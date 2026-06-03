@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoConsciência - Previsões Globais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>EcoConsciência</h1>
+        <p>Plataforma Digital de Educação Ambiental</p>
+    </header>
+
+    <main>
+        <a href="index.html" class="btn" style="display: inline-block; margin-bottom: 1.5rem;">← Voltar para o Início</a>
+
+        <section id="introducao">
+            <h2>Medições e Previsões Globais</h2>
+            <p>A análise de dados científicos é a nossa maior arma para entender a velocidade das mudanças climáticas. Abaixo, apresentamos o gráfico real do aumento da temperatura global nos últimos anos, mostrando como o planeta está aquecendo de forma acelerada.</p>
+        </section>
+
+        <section id="grafico-secao" style="margin: 2rem 0; background: #222; padding: 1.5rem; border-radius: 8px;">
+            <h3 style="color: #fff; margin-bottom: 1rem; text-align: center;">Anomalia da Temperatura Média Global (°C)</h3>
+            
+            <div style="position: relative; height:40vh; width:100%">
+                <canvas id="graficoTemperatura"></canvas>
+            </div>
+
+            <!-- Link Real e Clicável para os Créditos -->
+            <p style="font-size: 0.85rem; color: #aaa; margin-top: 1.5rem; text-align: center;">
+                <strong>Créditos dos Dados:</strong> 
+                <a href="https://climate.nasa.gov/vital-signs/global-temperature/" target="_blank" style="color: #ff4d4d; text-decoration: underline; font-weight: bold;">
+                    NASA's Goddard Institute for Space Studies (GISS)
+                </a>
+            </p>
+        </section>
+
+        <section id="ramificacoes">
+            <h2>O Que Esses Dados Significam?</h2>
+            <div class="cards-container">
+                <article class="card">
+                    <h3>O Acréscimo Atual</h3>
+                    <p>O gráfico mostra o desvio da temperatura em relação à média histórica. Nos últimos anos, ultrapassamos consistentemente a marca de 1°C de aquecimento global acumulado.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Previsão Futura</h3>
+                    <p>Cientistas alertam que, se as emissões de gases poluentes continuarem no ritmo atual, o planeta pode atingir a marca crítica de 1,5°C a 2°C de aumento até a metade deste século.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('graficoTemperatura').getContext('2d');
+        
+        const anos = ['2014', '2016', '2018', '2020', '2022', '2024', '2025'];
+        const anomalias = [0.75, 1.02, 0.85, 1.02, 0.90, 1.18, 1.20];
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: anos,
+                datasets: [{
+                    label: 'Aumento em relação à média histórica (°C)',
+                    data: anomalias,
+                    borderColor: '#ff4d4d',
+                    backgroundColor: 'rgba(255, 77, 77, 0.2)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        grid: { color: '#333' },
+                        ticks: { color: '#fff' }
+                    },
+                    x: {
+                        grid: { color: '#333' },
+                        ticks: { color: '#fff' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#fff' }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
